@@ -20,31 +20,11 @@ app.get('/random', (req, res) => {
 	axios.get(randomRecipe)
 		.then((response) => {
 			recipe = response.data.recipes[0];
-			// console.log(response.data.recipes[0].title);
-			// console.log(response.data.recipes[0].readyInMinutes);
-			// console.log(response.data.recipes[0].dishTypes);
-			// console.log(response.data.recipes[0].diets);
-			// console.log(response.data.recipes[0].servings);
-			// console.log(response.data.recipes[0].image);
-
-			// let ingredients = response.data.recipes[0].extendedIngredients;
-			// ingredients.forEach(item => {
-			// 	console.log(item.name);
-			// 	console.log(item.amount);
-			// 	console.log(item.unit);
-			// 	console.log("-------");
-			// })
-
-			// console.log(response.data.recipes[0].extendedIngredients);
-
-			// console.log(recipe);
 			res.render('random', {title: "Random recipe", randomRecipe: recipe});
 		})
 		.catch((error) => {
 			console.log(error);
 		});
-
-
 });
 
 app.listen(PORT, () => {

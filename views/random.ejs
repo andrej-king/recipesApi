@@ -1,8 +1,8 @@
-<%- include('partials/header')%>
+<%- include('partials/header') %>
 <div class="main_view_page">
     <h1 class="text-center mb-3">Show random recipe</h1>
 
-    <% if (randomRecipe != null) {%>
+    <% if (randomRecipe != null) { %>
         <div class="row mt-3  no-gutters justify-content-center">
             <img src="<%= randomRecipe.image %>" alt="">
         </div>
@@ -14,29 +14,28 @@
         <p>Diets: <span class=""><%= randomRecipe.diets %></span></p>
         <p>Servings: <span class=""><%= randomRecipe.servings %></span></p>
 
-    <div class="table-responsive">
-        <table class="table table-hover mt-5">
-            <thead>
-            <tr class="d-flex">
-                <th class="col-4">Name</th>
-                <th class="col-4">Amount</th>
-                <th class="col-4">Unit</th>
-            </tr>
-            </thead>
-            <tbody>
-            <% randomRecipe.extendedIngredients.forEach(item => { %>
+        <div class="table-responsive">
+            <table class="table table-hover mt-5">
+                <thead>
                 <tr class="d-flex">
-                    <td class="col-4"><%= item.name %></td>
-                    <td class="col-4"><%= item.amount %></td>
-                    <td class="col-4"><%= item.unit %></td>
+                    <th class="col-4">Name</th>
+                    <th class="col-4">Amount</th>
+                    <th class="col-4">Unit</th>
                 </tr>
-            <% }) %>
-            </tbody>
-        </table>
-    </div>
+                </thead>
+                <tbody>
+                <% randomRecipe.extendedIngredients.forEach(item => { %>
+                    <tr class="d-flex">
+                        <td class="col-4"><%= item.name %></td>
+                        <td class="col-4"><%= item.amount %></td>
+                        <td class="col-4"><%= item.unit %></td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        </div>
         <!-- /.table-responsive -->
-
-    <% }%>
+    <% } %>
 </div>
 <!-- /.main_view_page -->
-<%- include('partials/footer')%>
+<%- include('partials/footer') %>
